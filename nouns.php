@@ -22,7 +22,7 @@ for($a = 0; $a<=count($pieces)-1; $a++)
     		$datpl = $root."is";
     		$accpl = $root."as";
     		$ablpl = $root."is";
-    		$vocpl = $root."ae";
+    		$vocpl = $root."ae"; 
 		}
 		else if($det[0]=="2")
 		{
@@ -391,7 +391,15 @@ for($a = 0; $a<=count($pieces)-1; $a++)
 		if (!isset($accpl2)) $accpl2 = "";
 		if (!isset($ablpl2)) $ablpl2 = "";
 		if (!isset($vocpl2)) $vocpl2 = "";	
-		$arr = array("nom"=>$nom,"nom2"=>$nom2,"gen"=>$gen,"gen2"=>$gen2,"dat"=>$dat,"dat2"=>$dat2,"acc"=>$acc,"acc2"=>$acc2,"abl"=>$abl,"abl2"=>$abl2,"voc"=>$voc,"voc2"=>$voc2,"nompl"=>$nompl,"nompl2"=>$nompl2,"genpl"=>$genpl,"genpl2"=>$genpl2,"datpl"=>$datpl,"datpl2"=>$datpl2,"accpl"=>$accpl,"accpl2"=>$accpl2,"ablpl"=>$ablpl,"ablpl2"=>$ablpl2,"vocpl"=>$vocpl,"vocpl2"=>$vocpl2);
+		if($pos[4]==$pos[3])
+		{
+			$def = $pos[6];
+		}
+		else
+		{
+			$def = $pos[4];
+		}
+		$arr = array("nom"=>$nom,"nom2"=>$nom2,"gen"=>$gen,"gen2"=>$gen2,"dat"=>$dat,"dat2"=>$dat2,"acc"=>$acc,"acc2"=>$acc2,"abl"=>$abl,"abl2"=>$abl2,"voc"=>$voc,"voc2"=>$voc2,"nompl"=>$nompl,"nompl2"=>$nompl2,"genpl"=>$genpl,"genpl2"=>$genpl2,"datpl"=>$datpl,"datpl2"=>$datpl2,"accpl"=>$accpl,"accpl2"=>$accpl2,"ablpl"=>$ablpl,"ablpl2"=>$ablpl2,"vocpl"=>$vocpl,"vocpl2"=>$vocpl2,"def"=>$def);
 		$json = json_encode($arr);
 		$base.=$json.",";
 		$nom2 = "";
